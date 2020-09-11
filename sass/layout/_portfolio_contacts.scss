@@ -1,0 +1,48 @@
+.contacts-title {
+  color: $primary-text-color;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: $primary-text-color;
+  transition: all 0.4s ease;
+}
+
+.contacts-title:hover,
+.contacts-title:focus,
+.contacts-item-svg:hover {
+  color: $accent-color;
+  fill: $accent-color;
+}
+
+.contacts-svg {
+  margin-right: 10px;
+  transition: all 0.4s ease;
+}
+
+.contacts {
+  display: flex;
+  margin-left: auto;
+
+  & .item:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.contacts-link {
+  color: $secondary-text-color;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: all 0.4s ease;
+
+  &:hover,
+  &focus {
+    color: $accent-color;
+  }
+}

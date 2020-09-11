@@ -1,0 +1,38 @@
+.our-clients {
+  padding-right: 15px;
+  padding-left: 15px;
+  height: 182px;
+}
+
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clients-list {
+  width: 170px;
+  height: 90px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.clients-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-white-color;
+  width: 170px;
+  height: 90px;
+  border: 2px solid $primary-icon-color;
+  border-radius: 6px;
+  fill: $primary-icon-color;
+  transition: all 0.4s ease;
+
+  &:hover,
+  &:hover {
+    border-color: $accent-color;
+    fill: $accent-color;
+  }
+}
