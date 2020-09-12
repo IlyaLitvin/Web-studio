@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Portfolio</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap">
   <link rel="stylesheet" href="./css/main.min.css" />
@@ -19,10 +19,10 @@
           Web <span class="item">Studio</span>
         </a>
 
-        <button type="button" class="menu-burger" aria-expanded="false" aria-controls="menu-container" data-menu-button>
-          <svg width="40" height="40" aria-label="Переключатель мобильного меню">
-            <use class="icon-cross" href="./images/symbol-defs.svg#close-burger"></use>
-            <use class="icon-menu" href="./images/symbol-defs.svg#menu-burger"></use>
+        <button type="button" class="menu-burger" data-menu-button>
+          <svg width="40" height="40">
+            <use class="icon-cross" href="./img/social/sprite.svg#close-menu"></use>
+            <use class="icon-menu" href="./img/social/sprite.svg#open-menu"></use>
           </svg>
         </button>
 
@@ -69,19 +69,19 @@
       <div class="container">
         <ul class="portfolio-filter">
           <li class="item">
-            <button type="button" class="filter-button">Все</button>
+            <a href="#"><button type="button" class="filter-button">Все</button></a>
           </li>
           <li class="item">
-            <button type="button" class="filter-button">Веб-сайты</button>
+            <a href="#"><button type="button" class="filter-button">Веб-сайты</button></a>
           </li>
           <li class="item">
-            <button type="button" class="filter-button">Приложения</button>
+            <a href="#"><button type="button" class="filter-button">Приложения</button></a>
           </li>
           <li class="item">
-            <button type="button" class="filter-button">Дизайн</button>
+            <a href="#"><button type="button" class="filter-button">Дизайн</button></a>
           </li>
           <li class="item">
-            <button type="button" class="filter-button">Маркетинг</button>
+            <a href="#"><button type="button" class="filter-button">Маркетинг</button></a>
           </li>
         </ul>
 
@@ -262,7 +262,6 @@
   </main>
 
   <!-- footer -->
-  <!-- footer -->
   <footer class="footer">
     <div class="container footer-content">
       <div class="footer-contacts">
@@ -286,28 +285,28 @@
           <li class="item">
             <a href="" class="icon-social">
               <svg class="social-media">
-                <use href="./images/symbol-defs.svg#instagram"></use>
+                <use href="./img/social/sprite.svg#icon-instagram"></use>
               </svg>
             </a>
           </li>
           <li class="item">
             <a href="" class="icon-social">
               <svg class="social-media">
-                <use href="./images/symbol-defs.svg#twitter"></use>
+                <use href="./img/social/sprite.svg#icon-twitter"></use>
               </svg>
             </a>
           </li>
           <li class="item">
             <a href="" class="icon-social">
               <svg class="social-media">
-                <use href="./images/symbol-defs.svg#facebook"></use>
+                <use href="./img/social/sprite.svg#icon-facebook"></use>
               </svg>
             </a>
           </li>
           <li class="item">
             <a href="" class="icon-social">
               <svg class="social-media">
-                <use href="./images/symbol-defs.svg#linkedin"></use>
+                <use href="./img/social/sprite.svg#icon-linkedin"></use>
               </svg>
             </a>
           </li>
@@ -320,7 +319,7 @@
           <input type="email" name="mail" placeholder="E-mail" />
           <button type="submit" class="button">
             Подписаться<svg class="send">
-              <use href="./images/symbol-defs.svg#send"></use>
+              <use href="./img/clients/sprite.svg#icon-send"></use>
             </svg>
           </button>
         </form>
@@ -330,21 +329,7 @@
 
   <script src="./js/menu.js"></script>
   <script src="./js/modal.js"></script>
-  <!-- <script>
-      (() => {
-        document
-          .querySelector('.js-speaker-form')
-          .addEventListener('submit', e => {
-            e.preventDefault();
 
-            new FormData(e.currentTarget).forEach((value, name) =>
-              console.log(`${name}: ${value}`),
-            );
-
-            e.currentTarget.reset();
-          });
-      })();
-    </script> -->
 </body>
 
 </html>
