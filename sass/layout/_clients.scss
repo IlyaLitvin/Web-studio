@@ -36,3 +36,12 @@
     fill: $accent-color;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .clients {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+      margin-right: 10px;
+    }
+  }
+}

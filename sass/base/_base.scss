@@ -23,8 +23,20 @@ img {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  margin: -15px;
-  margin-right: 0;
+}
+
+.bg {
+  background-color: $box-bg-color;
+}
+
+.section {
+  padding-bottom: 94px;
+  padding-top: 94px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {

@@ -43,8 +43,20 @@ img {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  margin: -15px;
-  margin-right: 0;
+}
+
+.bg {
+  background-color: #f5f4fa;
+}
+
+.section {
+  padding-bottom: 94px;
+  padding-top: 94px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -388,7 +400,7 @@ img {
   .site-nav .current::after {
     position: absolute;
     left: 0;
-    margin-top: 8px;
+    margin-top: 25px;
     display: block;
     content: " ";
     border-radius: 2px;
@@ -410,17 +422,35 @@ img {
 }
 
 @media screen and (min-width: 1200px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .menu-nav {
+    margin-right: 300px;
+  }
+  .head-adress {
+    margin-left: auto;
+    display: flex;
+  }
+  .menu-container {
+    display: flex;
+  }
   .site-nav {
     display: flex;
-    margin-left: 90px;
+    margin-left: 93px;
     margin-top: 0;
     margin-bottom: 0;
+    margin-right: 0;
   }
   .site-nav .item:not(:last-child) {
     margin-right: 50px;
   }
   .site-nav .current {
     position: relative;
+    color: #2196f3;
+  }
+  .site-nav .current:active, .site-nav .current:visited {
     color: #2196f3;
   }
   .site-nav .current::after {
@@ -448,10 +478,6 @@ img {
   .site-nav .link:focus, .site-nav .link:hover, .site-nav .linkactive, .site-nav .linkvisibled {
     color: #2196f3;
   }
-  .section-list {
-    width: calc(100% / 4);
-    padding: 15px;
-  }
 }
 
 @media screen and (max-width: 767px) {
@@ -468,7 +494,6 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    margin-bottom: 60px;
   }
   .hero-title {
     font-weight: 900;
@@ -496,7 +521,6 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    margin-bottom: 60px;
   }
   .hero-title {
     font-weight: 900;
@@ -523,7 +547,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 94px;
   }
   .hero-bg {
     max-width: 696px;
@@ -577,20 +600,27 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+  .section .container {
+    margin-bottom: 60px;
+  }
   .feature-list {
     display: flex;
     flex-wrap: wrap;
+    margin: -15px;
+  }
+  .section-list {
+    width: calc((100% - 2 * 30px) / 2);
+    margin: 15px;
   }
   .icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 354px;
-    height: 120px;
     border: 1px solid transparent;
     border-radius: 10px;
     background-color: #f5f4fa;
     margin-bottom: 30px;
+    height: 120px;
   }
   .section-title {
     color: #212121;
@@ -602,6 +632,39 @@ img {
     padding-bottom: 10px;
     margin: 0 auto;
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .feature-list {
+    display: flex;
+    margin: -15px;
+    flex-wrap: nowrap;
+  }
+  .section-list {
+    width: calc((100% - 4 * 15px) / 4);
+    margin: 15px;
+  }
+  .section {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .section-title {
+    color: #212121;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin: 0 auto;
+  }
+  .section-text {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    margin: 0 auto;
   }
 }
 
@@ -639,10 +702,6 @@ img {
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-}
-
-.team-card-name:not(:last-child) {
-  margin-right: 30px;
 }
 
 .team-card .list {
@@ -686,6 +745,49 @@ img {
   fill: #f5f4fa;
 }
 
+.work-name {
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .team-card-name:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  .section-team-list {
+    display: flex;
+    justify-content: center;
+  }
+  .section-team {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .team-card-name {
+    height: 100%;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+  .section-team-list {
+    display: flex;
+    justify-content: center;
+  }
+  .section-team {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .team-card-name:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
 .our-clients {
   padding-right: 15px;
   padding-left: 15px;
@@ -724,6 +826,19 @@ img {
   fill: #2196f3;
 }
 
+@media screen and (max-width: 767px) {
+  .clients:not(:last-child) {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .no-padd {
+    display: none;
+  }
+}
+
 .works-page-box {
   width: calc((100% - 60px) / 3);
   position: relative;
@@ -748,6 +863,32 @@ img {
   height: 70px;
   color: #ffffff;
   background: rgba(47, 48, 58, 0.8);
+}
+
+.works-page-box:not(:last-child) {
+  margin-right: 30px;
+}
+
+.works-page {
+  list-style: none;
+  display: flex;
+  font-size: 0;
+  flex-wrap: wrap;
+}
+
+.main > .no-padd {
+  padding-top: 0;
+}
+
+.section-name {
+  color: #212121;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 
 .button {

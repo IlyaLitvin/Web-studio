@@ -168,7 +168,7 @@
       &::after {
         position: absolute;
         left: 0;
-        margin-top: 8px;
+        margin-top: 25px;
         display: block;
         content: " ";
         border-radius: 2px;
@@ -195,11 +195,30 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-nav {
+    margin-right: 300px;
+  }
+
+  .head-adress {
+    margin-left: auto;
+    display: flex;
+  }
+
+  .menu-container {
+    display: flex;
+  }
+
   .site-nav {
     display: flex;
-    margin-left: 90px;
+    margin-left: 93px;
     margin-top: 0;
     margin-bottom: 0;
+    margin-right: 0;
 
     & .item:not(:last-child) {
       margin-right: 50px;
@@ -208,6 +227,11 @@
     & .current {
       position: relative;
       color: $accent-color;
+
+      &:active,
+      &:visited {
+        color: $accent-color;
+      }
 
       &::after {
         position: absolute;
@@ -240,10 +264,5 @@
         color: $accent-color;
       }
     }
-  }
-
-  .section-list {
-    width: calc(100% / 4);
-    padding: 15px;
   }
 }

@@ -33,10 +33,6 @@
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-
-  &:not(:last-child) {
-    margin-right: 30px;
-  }
 }
 
 .team-card .list {
@@ -77,5 +73,56 @@
 
   &:hover {
     fill: $box-bg-color;
+  }
+}
+
+.work-name {
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .team-card-name {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .section-team-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-team {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .team-card-name {
+    height: 100%;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .section-team-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-team {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .team-card-name {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
   }
 }
