@@ -18,9 +18,9 @@ button {
   cursor: pointer;
   transition: all 0.4s ease;
 
-  // &:focus,
-  // &:hover {
-  //   color: $primary-white-color;
-  //   background-color: $accent-color;
-  // }
+  &:focus,
+  &:hover {
+    color: $primary-white-color;
+    background-color: $accent-color;
+  }
 }
