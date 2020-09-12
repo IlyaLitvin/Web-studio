@@ -1,177 +1,255 @@
 .backdrop {
   position: fixed;
-  left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 93px 15px;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: all 250ms linear;
 
-  &.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: all 250ms linear 250ms;
-  }
+  overflow-y: scroll;
+
+  opacity: 1;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .modal {
-  border-radius: 4px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  min-width: 528px;
-  background-color: $primary-white-color;
-  transition: transform 250ms linear 150ms;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 
-  .backdrop.is-hidden & {
-    transform: translateX(-50%) scale(0);
-    transition: transform 250ms linear 0s;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+
+  background-color: $white;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 767px) {
+    max-width: 450px;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 450px;
+    width: 100%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 528px;
   }
 }
 
-.modal-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.close-form {
   position: absolute;
+  display: flex;
   top: 8px;
   right: 8px;
+
   width: 30px;
   height: 30px;
-  background-color: $primary-white-color;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
   border-radius: 50%;
-  padding: 0;
-}
-
-.modal-name {
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  letter-spacing: 0.03em;
-  color: $title-text-color;
-  margin-bottom: 40px;
-}
-
-.modal-form {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 40px;
-
-  & a {
-    color: $accent-color;
-  }
-}
-
-.modal-form-input {
-  width: 100%;
-  height: 40px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  padding-left: 42px;
-
-  &:focus,
-  &:hover {
-    border-color: $accent-color;
-  }
-}
-
-.modal-form-input:focus,
-.modal-form-message:focus {
-  outline: none;
-}
-
-.modal-form-message {
-  width: 100%;
-  height: 120px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  resize: none;
-  padding: 12px 16px;
-
-  &:focus,
-  &:hover {
-    border-color: $accent-color;
-  }
-}
-
-.modal-form-contain {
-  position: relative;
-  margin-bottom: 40px;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: $primary-text-color;
-}
-
-.modal-form-input-label {
-  position: absolute;
-  top: -26px;
-  left: 0;
-}
-
-.modal-form-label-check {
-  padding-top: 20px;
-  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $white;
+  justify-content: center;
   align-items: center;
-
-  &::before {
-    display: block;
-    content: "";
-    width: 16px;
-    height: 16px;
-    margin-right: 6px;
-    background-image: url(../img/Vector.svg), url(../img/iconcheck.svg);
-    background-size: contain, 0;
-    background-repeat: no-repeat;
-
-    .modal-form-check:checked + & {
-      background-image: url(../img/iconcheck.svg);
-      background-size: 1, contain;
-    }
-  }
 }
 
-.modal-form-icon {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-  display: block;
+.close-icon {
   width: 18px;
   height: 18px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  .modal-form-input:focus ~ & {
+  .close-form:hover & {
     fill: $accent-color;
   }
 }
 
-.modal-form-btn {
-  color: $primary-white-color;
-  background-color: $accent-color;
-  font-family: Roboto;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.87;
-  border-radius: 4px;
-  padding: 10px 32px;
+.form {
+  margin: 0;
+  padding: 40px;
   text-align: center;
-  display: inline-block;
-  width: 200px;
-  margin-top: 25px;
-
-  border: 1px solid transparent;
 }
 
-.modal-form-btn-container {
+.form b {
+  display: inline-block;
+
+  font-weight: 700;
+  margin-bottom: 30px;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+    line-height: 1.15;
+  }
+}
+
+.form-field {
+  position: relative;
   display: flex;
-  justify-content: center;
+
+  margin-bottom: 28px;
+
+  &:nth-child(5) {
+    margin-bottom: 20px;
+  }
+}
+
+.form-field input,
+.form-field textarea {
+  margin: 0;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  color: $text-color;
+}
+
+.form-field input {
+  padding: 12px 42px;
+}
+
+.form-field textarea {
+  padding: 12px 16px;
+  resize: none;
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+
+  font-size: 14px;
+  line-height: 1.14;
+
+  transform: translateY(-50%);
+  color: $text-color;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .form-field:focus-within &,
+  .form-input:not(:placeholder-shown) + & {
+    color: $accent-color;
+    transform: translateY(-42px);
+    left: 16px;
+  }
+}
+
+.comment {
+  top: 12px;
+  left: 16px;
+
+  transform: none;
+
+  .form-field:focus-within &,
+  .form-input:not(:placeholder-shown) + & {
+    transform: translateY(-34px);
+  }
+}
+
+.form-field .icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  width: 18px;
+  height: 18px;
+
+  transform: translateY(-50%);
+}
+
+.form-icon {
+  width: 18px;
+  height: 18px;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-field:focus-within .icon {
+  fill: $accent-color;
+}
+
+.form-input:focus {
+  border: 1px solid $accent-color;
+}
+
+.form .link {
+  color: $accent-color;
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0px;
+  padding: 0px;
+  clip: rect(0 0 0 0);
+
+  overflow: hidden;
+
+  &-label {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 1199px) {
+      font-size: 12px;
+      line-height: 1.1;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    @media screen and (min-width: 480px) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.checkbox-label .icon {
+  display: inline-block;
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid $primary-text-color;
+  border-radius: 2px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox:checked + .icon {
+  border-color: $accent-color;
+  background-color: $accent-color;
+  background-image: url(../images/check.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.checkbox-text {
+  text-align: left;
 }
