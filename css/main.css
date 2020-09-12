@@ -1190,7 +1190,7 @@ address {
 .checkbox:checked + .icon {
   border-color: #2196f3;
   background-color: #2196f3;
-  background-image: url(../images/check.svg);
+  background-image: url(../../img/iconcheck.svg);
   background-size: contain;
   background-origin: border-box;
 }
