@@ -1234,6 +1234,9 @@ address {
     fill: #212121;
     background-color: transparent;
   }
+  .menu-burger:hover, .menu-burger:focus {
+    fill: #2196f3;
+  }
   .menu-burger .icon-cross {
     display: none;
   }

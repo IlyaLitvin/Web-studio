@@ -19,6 +19,11 @@
     fill: $primary-text-color;
     background-color: transparent;
 
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+    }
+
     .icon-cross {
       display: none;
     }
