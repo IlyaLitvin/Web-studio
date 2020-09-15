@@ -4,9 +4,6 @@
 
   font-family: $main-font;
   letter-spacing: 0.03em;
-}
-
-body {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -16,15 +13,15 @@ html {
   height: 100%;
 }
 
-header {
+.head {
   flex: 0 0 auto;
 }
 
-footer {
+.footer {
   flex: 0 0 auto;
 }
 
-main {
+.main {
   flex: 1 0 auto;
 }
 

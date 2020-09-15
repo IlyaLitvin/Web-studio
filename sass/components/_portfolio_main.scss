@@ -133,3 +133,9 @@
     transform: translateY(0);
   }
 }
+
+@media screen and (max-width: 480px) {
+  .examples-text {
+    padding: 15px;
+  }
+}
