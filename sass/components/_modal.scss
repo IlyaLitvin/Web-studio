@@ -7,7 +7,7 @@
   padding: 93px 15px;
   background-color: rgba(0, 0, 0, 0.5);
 
-  overflow-y: auto;
+  overflow-y: scroll;
 
   opacity: 1;
 
@@ -249,7 +249,7 @@
 .checkbox:checked + .icon {
   border-color: $accent-color;
   background-color: $accent-color;
-  background-image: url(./img/iconcheck.svg);
+  background-image: url(../img/iconcheck.svg);
   background-size: contain;
   background-origin: border-box;
 }

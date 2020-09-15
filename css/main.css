@@ -946,7 +946,7 @@ address {
   height: 100%;
   padding: 93px 15px;
   background-color: rgba(0, 0, 0, 0.5);
-  overflow-y: auto;
+  overflow-y: scroll;
   opacity: 1;
   -webkit-transition: all 250ms linear 250ms;
   transition: all 250ms linear 250ms;
@@ -1219,7 +1219,7 @@ address {
 .checkbox:checked + .icon {
   border-color: #2196f3;
   background-color: #2196f3;
-  background-image: url(./img/iconcheck.svg);
+  background-image: url(../img/iconcheck.svg);
   background-size: contain;
   background-origin: border-box;
 }
